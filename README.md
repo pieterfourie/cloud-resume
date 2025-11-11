@@ -70,7 +70,7 @@ CI/CD:  	GitHub Actions
 
 📍 Western Cape, South Africa
 📧 pfourie507@gmail.com
-🔗 LinkedIn
+🔗 LinkedIn : https://www.linkedin.com/in/pieter-faasen-fourie
 
 
 ## 📜 License

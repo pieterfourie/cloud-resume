@@ -1,43 +1,36 @@
-// Current year
+// ---------- Current year ----------
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Theme toggle (prefers-color-scheme aware)
-const root = document.documentElement;
-const toggle = document.getElementById('themeToggle');
-let dark = true;
-toggle.addEventListener('click', () => {
-  dark = !dark;
-  // Simple theme switch: invert core vars for a light mode
-  if (!dark) {
-    root.style.setProperty('--bg', '#f6f8fc');
-    root.style.setProperty('--card', '#ffffff');
-    root.style.setProperty('--text', '#0b1220');
-    root.style.setProperty('--muted', '#4a576d');
-    root.style.setProperty('--shadow', '0 8px 24px rgba(0,0,0,0.08)');
-    document.body.style.background = 'var(--bg)';
-  } else {
-    root.style.setProperty('--bg', '#0b1220');
-    root.style.setProperty('--card', '#121a2b');
-    root.style.setProperty('--text', '#e7eefc');
-    root.style.setProperty('--muted', '#8ea0c0');
-    root.style.setProperty('--shadow', '0 8px 24px rgba(4,10,24,0.45)');
-    document.body.style.background = 'radial-gradient(1200px 800px at 80% -10%, #1b2540, transparent 60%), var(--bg)';
-  }
-});
+// ---------- Theme toggle: default = dark (no class), light = body.theme-light ----------
+(() => {
+  const btn = document.getElementById('themeToggle');
+  const STORAGE_KEY = 'theme'; // 'dark' | 'light'
 
-// Visitor counter (wire this to your API Gateway endpoint)
+  // Apply saved theme (default stays dark)
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if (saved === 'light') document.body.classList.add('theme-light');
+
+  // Keep button label simple (no emoji)
+  if (btn) btn.textContent = 'Theme';
+
+  btn?.addEventListener('click', () => {
+    const isLight = document.body.classList.toggle('theme-light');
+    localStorage.setItem(STORAGE_KEY, isLight ? 'light' : 'dark');
+  });
+})();
+
+// ---------- Visitor counter ----------
 (async function () {
   const el = document.getElementById('visitCount');
   try {
-    // Replace with your deployed API endpoint:
     const res = await fetch("https://b8lru7wzkk.execute-api.eu-north-1.amazonaws.com/prod/count", {
       method: 'GET',
       headers: { 'Accept': 'application/json' }
     });
     if (!res.ok) throw new Error('Bad response');
     const data = await res.json();
-    el.textContent = data.visits ?? '—';
-  } catch (e) {
+    el.textContent = (data && (data.visits ?? data.count ?? data.total)) ?? '—';
+  } catch {
     el.textContent = '—';
   }
 })();

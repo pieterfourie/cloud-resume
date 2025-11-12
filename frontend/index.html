@@ -2,19 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pieter Faasen Fourie — Cloud Engineer</title>
-  <meta name="description" content="Resume of Pieter Faasen Fourie — AWS-focused Cloud Engineer." />
+  <meta name="description" content="Resume of Pieter Faasen Fourie — AWS-focused Cloud Engineer (S3, CloudFront, API Gateway, Lambda, DynamoDB, Terraform, CI/CD)." />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Pieter Faasen Fourie — Cloud Engineer" />
+  <meta property="og:description" content="AWS • Python • IaC • CI/CD • Linux" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://pfourie.com" />
+  <meta name="theme-color" content="#0b1220" />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="favicon.ico" />
-  <meta property="og:title" content="Pieter Faasen Fourie — Cloud Engineer" />
-  <meta property="og:description" content="AWS | Python | IaC | CI/CD | Linux" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://YOUR-DOMAIN" />
-  <meta name="theme-color" content="#0b1220" />
+
+  <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -23,7 +32,7 @@
     "address":{"@type":"PostalAddress","addressRegion":"Western Cape","addressCountry":"ZA"},
     "email":"mailto:pfourie507@gmail.com",
     "telephone":"+27-73-607-7709",
-    "url":"https://YOUR-DOMAIN",
+    "url":"https://pfourie.com",
     "sameAs":[
       "https://www.linkedin.com/in/pieter-faasen-fourie",
       "https://github.com/pieterfourie"
@@ -35,9 +44,16 @@
 <body>
   <a class="skip-link" href="#content">Skip to content</a>
 
-  <header class="site-header">
-    <div class="wrap">
-      <div class="id-block">
+ <!-- Header -->
+<header class="site-header">
+  <div class="wrap">
+    <div class="profile-header">
+      <img
+        class="profile-pic"
+        src="https://media.licdn.com/dms/image/v2/D4D03AQF4FVVi59FaIg/profile-displayphoto-crop_800_800/B4DZoHDwWlG8AM-/0/1761055019352?e=1764806400&v=beta&t=IZQqabmfCjxu3Xn5FbvFV_SXD8TT2I_OGAGBP9Sb8PA"
+        alt="Pieter Faasen Fourie profile picture"
+      />
+      <div class="profile-text">
         <h1 class="name">Pieter Faasen Fourie</h1>
         <p class="sub">Cloud Engineering • AWS • Python • IaC • CI/CD</p>
         <ul class="meta">
@@ -48,39 +64,44 @@
           <li>💻 <a href="https://github.com/pieterfourie" target="_blank" rel="noopener">GitHub</a></li>
         </ul>
       </div>
-      <div class="header-actions">
-        <button id="themeToggle" class="btn" aria-label="Toggle dark mode">🌓 Theme</button>
-        <div class="counter" aria-live="polite">
-          <span class="counter-label">Visitors:</span>
-          <span id="visitCount" class="counter-value">—</span>
-        </div>
-      </div>
     </div>
-  </header>
+  </div>
+</header>
 
+
+<div class="header-actions">
+  <button id="themeToggle" class="btn" aria-label="Toggle theme">Theme</button>
+  <div class="counter" aria-live="polite">
+    <span class="counter-label">Visitors:</span>
+    <span id="visitCount" class="counter-value">—</span>
+  </div>
+</div>
+
+
+  <!-- Main -->
   <main id="content" class="wrap">
-    <section class="card">
-      <h2>Career Objective</h2>
+    <section class="card" aria-labelledby="obj">
+      <h2 id="obj">Career Objective</h2>
       <p>Transitioning from IT support to cloud engineering. Eager to apply analytical thinking, communication skills, and a results-oriented mindset to help individuals and businesses achieve their goals.</p>
     </section>
 
-    <section class="card">
-      <h2>Professional Summary</h2>
+    <section class="card" aria-labelledby="sum">
+      <h2 id="sum">Professional Summary</h2>
       <p>Dynamic and adaptable in the IT sector with a proven record at Xneelo and LDP, excelling in client relations and technical problem-solving.</p>
     </section>
 
-    <section class="card">
-      <h2>Key Skills</h2>
-      <ul class="taglist">
+    <section class="card" aria-labelledby="skills">
+      <h2 id="skills">Key Skills</h2>
+      <ul class="taglist" role="list">
         <li>AWS Cloud</li><li>Python</li><li>Infrastructure as Code (IaC)</li>
         <li>CI/CD</li><li>Linux</li><li>SQL</li><li>Analytical Problem Solving</li>
         <li>AI Tools & Implementation</li>
       </ul>
     </section>
 
-    <section class="grid-2">
-      <article class="card">
-        <h2>Education & Certifications</h2>
+    <section class="grid-2" aria-label="Education and Projects">
+      <article class="card" aria-labelledby="edu">
+        <h2 id="edu">Education & Certifications</h2>
         <ul class="list">
           <li><strong>AWS Certified Cloud Practitioner</strong> — Amazon Web Services, 2025</li>
           <li><strong>AWS Solutions Architect</strong> — Amazon Web Services, 2025</li>
@@ -88,25 +109,25 @@
         </ul>
       </article>
 
-      <article class="card">
-        <h2>Projects</h2>
+      <article class="card" aria-labelledby="projects">
+        <h2 id="projects">Projects</h2>
 
         <div class="proj">
           <h3>API — Quote of the Day</h3>
           <p>Created an API with Python and FastAPI providing daily quotes for each day of the year.</p>
-          <a class="link" href="https://github.com/pieterfourie/quote-api" target="_blank" rel="noopener">GitHub: quote-api →</a>
+          <a class="link" href="https://github.com/pieterfourie/quote-api" target="_blank" rel="noopener noreferrer">GitHub: quote-api →</a>
         </div>
 
         <div class="proj">
           <h3>S3 Automation</h3>
           <p>Automated creation and teardown of S3 buckets, including folder uploads, using Python and boto3 to control costs.</p>
-          <a class="link" href="https://github.com/pieterfourie/S3_project" target="_blank" rel="noopener">GitHub: S3_project →</a>
+          <a class="link" href="https://github.com/pieterfourie/S3_project" target="_blank" rel="noopener noreferrer">GitHub: S3_project →</a>
         </div>
 
         <div class="proj">
           <h3>Cloud Resume</h3>
-          <p>Full-stack serverless resume: S3 + CloudFront + Route 53, JS visitor counter via API Gateway & Lambda (Python/boto3) with DynamoDB. Infra via Terraform and CI/CD via GitHub Actions (frontend + backend).</p>
-          <a class="link" href="https://github.com/pieterfourie/cloud-resume" target="_blank" rel="noopener">GitHub: cloud-resume →</a>
+          <p>Full-stack serverless resume: S3 + CloudFront + Route 53, JS visitor counter via API Gateway &amp; Lambda (Python/boto3) with DynamoDB. Infrastructure via Terraform and CI/CD via GitHub Actions (frontend + backend).</p>
+          <a class="link" href="https://github.com/pieterfourie/cloud-resume" target="_blank" rel="noopener noreferrer">GitHub: cloud-resume →</a>
         </div>
 
         <div class="proj">
@@ -116,8 +137,8 @@
       </article>
     </section>
 
-    <section class="card">
-      <h2>Work Experience</h2>
+    <section class="card" aria-labelledby="exp">
+      <h2 id="exp">Work Experience</h2>
 
       <div class="role">
         <header>
@@ -125,10 +146,10 @@
           <span class="org">Xneelo — Durbanville, South Africa</span>
           <span class="when">Dec 2024 – Aug 2025</span>
         </header>
-        <ul>
+        <ul class="list">
           <li>Supported Linux-based hosting and client email systems.</li>
           <li>Handled 30+ client interactions/day for DNS, domains, and websites.</li>
-          <li>Improved retention via effective comms and problem resolution.</li>
+          <li>Improved retention via effective communication and problem resolution.</li>
           <li>Reduced downtime and boosted customer satisfaction.</li>
           <li>Scripted workflow automation for data migrations.</li>
         </ul>
@@ -140,8 +161,8 @@
           <span class="org">LDP — Stellenbosch, South Africa</span>
           <span class="when">Jul 2023 – Sep 2024</span>
         </header>
-        <ul>
-          <li>Managed M365 user systems, backups, and infra reliability.</li>
+        <ul class="list">
+          <li>Managed Microsoft 365 user systems, backups, and infrastructure reliability.</li>
           <li>Provided onsite/remote support to improve productivity.</li>
           <li>Aligned IT initiatives with executive strategy.</li>
           <li>Audited hardware/software to maintain standards.</li>
@@ -154,7 +175,7 @@
           <span class="org">Fairroots Estate — Lutzville, South Africa</span>
           <span class="when">Sep 2021 – May 2023</span>
         </header>
-        <ul>
+        <ul class="list">
           <li>Ran daily farm operations to Fairtrade/WIETA standards.</li>
           <li>Led teams for consistent performance and quality.</li>
           <li>Introduced efficient record-keeping and documentation.</li>
@@ -163,22 +184,23 @@
       </div>
     </section>
 
-    <section class="card">
-      <h2>Personal Qualities</h2>
-      <ul class="taglist">
-        <li>Strong communicator</li><li>Resilient & driven</li><li>Fast learner</li>
+    <section class="card" aria-labelledby="qualities">
+      <h2 id="qualities">Personal Qualities</h2>
+      <ul class="taglist" role="list">
+        <li>Strong communicator</li><li>Resilient &amp; driven</li><li>Fast learner</li>
         <li>Analytical</li><li>Goal-oriented</li><li>Calm under pressure</li>
       </ul>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="wrap">
       <small>© <span id="year"></span> Pieter Faasen Fourie</small>
-      <nav class="foot-links">
+      <nav class="foot-links" aria-label="Footer links">
         <a href="mailto:pfourie507@gmail.com">Email</a>
-        <a href="https://www.linkedin.com/in/pieter-faasen-fourie" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://github.com/pieterfourie" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/pieter-faasen-fourie" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/pieterfourie" target="_blank" rel="noopener noreferrer">GitHub</a>
       </nav>
     </div>
   </footer>

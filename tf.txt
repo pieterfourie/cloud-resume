@@ -1,0 +1,2 @@
+terraform plan -var="domain_name=pfourie.com" -var="bucket_name=faasen-cloud-resume"
+terraform apply -var="domain_name=pfourie.com" -var="bucket_name=faasen-cloud-resume"

@@ -1,0 +1,114 @@
+# ------------------------
+# Global / OS
+# ------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ------------------------
+# Python
+# ------------------------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.env
+*.venv
+env/
+venv/
+.env/
+.Python
+pip-log.txt
+requirements.lock
+# virtualenv or pyenv local files
+.python-version
+
+# ------------------------
+# Terraform
+# ------------------------
+*.tfstate
+*.tfstate.*
+crash.log
+*.tfvars
+*.tfvars.json
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraform/
+.terraform.lock.hcl
+terraform.tfplan
+terraform.rc
+
+# ------------------------
+# AWS / Credentials
+# ------------------------
+*.pem
+*.key
+*.crt
+*.csr
+.aws/
+*.zip
+lambda.zip
+*.tfbackend
+# prevent accidental push of config files
+config.json
+aws_config/
+credentials
+
+# ------------------------
+# Node / Frontend
+# ------------------------
+node_modules/
+dist/
+build/
+.cache/
+.npm/
+.npmrc
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# ------------------------
+# VS Code / IDEs
+# ------------------------
+.vscode/
+.idea/
+*.code-workspace
+*.sublime-project
+*.sublime-workspace
+
+# ------------------------
+# Logs & Temp
+# ------------------------
+*.log
+*.tmp
+*.swp
+*.bak
+*.out
+*.tmp.*
+*.retry
+*.orig
+
+# ------------------------
+# Project Specific
+# ------------------------
+frontend/.terraform/
+backend/.terraform/
+infra-web/.terraform/
+frontend/.env
+backend/.env
+infra-web/.env
+
+# ------------------------
+# GitHub Actions cache / artifacts
+# ------------------------
+*.bak
+__MACOSX/
+*.tar.gz
+*.tgz
+
+# Ignore any local testing outputs or archives
+tests/__pycache__/
+test-results/
+coverage/

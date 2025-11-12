@@ -1,0 +1,41 @@
+name: Backend Deploy
+on:
+  push:
+    paths: ["backend/**", ".github/workflows/backend-deploy.yml"]
+    branches: ["main"]
+
+jobs:
+  tf:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Install test deps
+        run: pip install -r requirements.txt pytest
+      - name: Run tests
+        run: pytest -q
+
+      - uses: hashicorp/setup-terraform@v3
+        with: { terraform_version: 1.9.5 }
+
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: eu-north-1
+
+      - name: Terraform Init/Plan
+        run: |
+          terraform init
+          terraform fmt -check
+          terraform validate
+          terraform plan -out tf.plan
+      - name: Terraform Apply
+        if: github.ref == 'refs/heads/main'
+        run: terraform apply -auto-approve tf.plan

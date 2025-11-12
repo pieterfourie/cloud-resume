@@ -30,7 +30,7 @@ toggle.addEventListener('click', () => {
   const el = document.getElementById('visitCount');
   try {
     // Replace with your deployed API endpoint:
-    const res = await fetch('https://YOUR_API_ID.execute-api.YOUR-REGION.amazonaws.com/prod/count', {
+    const res = await fetch("https://b8lru7wzkk.execute-api.eu-north-1.amazonaws.com/prod/count", {
       method: 'GET',
       headers: { 'Accept': 'application/json' }
     });
